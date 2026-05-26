@@ -6,7 +6,8 @@ class FortivpnAuto < Formula
   license "MIT"
 
   depends_on "openfortivpn"
-  depends_on cask: "hammerspoon"  # cask dependency ⇒ macOS-only
+  # Hammerspoon is a cask and can't be a formula dependency; `fortivpn-auto
+  # install` runs `brew install --cask hammerspoon` if it's not already present.
 
   def install
     libexec.install Dir["*"]
@@ -15,8 +16,9 @@ class FortivpnAuto < Formula
 
   def caveats
     <<~EOS
-      One more step — finish setup on this Mac (writes your openfortivpn config,
-      installs the Hammerspoon Spoon, a scoped sudoers grant, and a LaunchAgent):
+      One more step — finish setup on this Mac (installs Hammerspoon if needed,
+      writes your openfortivpn config + the Spoon, a scoped sudoers grant, and a
+      LaunchAgent):
 
         fortivpn-auto install --preset ucalgary       # UCalgary
         fortivpn-auto install --config ~/vpn.conf     # any FortiGate SAML gateway
