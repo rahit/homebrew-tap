@@ -1,8 +1,8 @@
 class FortivpnAuto < Formula
   desc "Auto-connect a SAML FortiGate SSL-VPN on macOS by Wi-Fi SSID"
   homepage "https://github.com/rahit/fortivpn-auto"
-  url "https://github.com/rahit/fortivpn-auto/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "3b08843bd7ee075103c0e0ff250c789868223b8cb775bb2f29453d6d8d4540c2"
+  url "https://github.com/rahit/fortivpn-auto/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "48c5fa34148ffed0cf589b17896f4c991a76cb8526901ec9c7a014160dcd5d4a"
   license "MIT"
 
   depends_on "openfortivpn"
